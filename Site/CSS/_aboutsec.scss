@@ -1,0 +1,120 @@
+.aboutsec {
+	height: 330px;
+	background: $secondary-color;
+	display: flex;
+	// max-width: 1500px;
+	// margin: 0 auto;
+}
+
+.aboutsec-wrapper {
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	position: absolute;
+}
+
+.aboutsec-col {
+	width: 500px;
+	margin-left: 20%;
+	height: 330px;
+
+	.aboutsec-text {
+		margin-top: 30px;
+		width: auto;
+		color: $background-color;
+
+		h2 {
+			font-size: calc(12px + 1vw);
+			color: $primary-color;
+		}
+
+		p {
+			font-weight: 300;
+			padding: 1rem;
+			font-size: calc(4px + 1vw);
+			// line-height: 1.6em;
+		}
+
+		span {
+			font-family: "Decoy";
+			font-size: 1.5em;
+		}
+
+		a {
+			color: $primary-color;
+			font-weight: 500;
+		}
+	}
+
+	form {
+		input {
+			background-color: $primary-accent;
+			padding: 8px;
+			color: $secondary-color;
+			caret-color: $secondary-color;
+		}
+
+		button {
+			background-color: $primary-color;
+			padding: 8px;
+			color: $lighttext-color;
+			cursor: pointer;
+			transition: background-color 0.2s ease-in-out;
+
+			&:hover {
+				background-color: $primary-highlight;
+			}
+		}
+	}
+}
+
+.anim {
+	opacity: 0;
+}
+
+.image-container {
+	position: relative;
+	width: 50%;
+
+	.aboutimage-foreground {
+		position: absolute;
+		background-image: url(../ASSETS/HiRes/Trooper.png);
+		background-size: 550px;
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	.aboutimage-background {
+		position: absolute;
+		top: 0px;
+		right: -45%;
+		background-color: $primary-accent;
+		width: 90%;
+		height: 100%;
+	}
+}
+
+@keyframes IOanim {
+	from {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.image-container {
+		border-radius: 7.5rem;
+		width: 5rem;
+		height: 5rem;
+		margin: auto;
+		overflow: hidden;
+		background-color: $secondary-color;
+	}
+}

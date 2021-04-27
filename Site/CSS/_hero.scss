@@ -1,0 +1,163 @@
+.hero {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	max-width: 1700px;
+	margin: 0 auto;
+}
+
+.hero-col {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.horizbox {
+	//TODO box-shadow: 2px 2px 5px #888; THIS SHOULD BE LOOKED AT WHEN I HAVE THE IMAGES
+	display: block;
+	height: 40vh;
+	width: 60%;
+	margin: 5vh 5% 0px auto;
+	position: relative;
+	background: $secondary-color;
+}
+
+.box1 {
+	animation: slideIn 0.7s forwards;
+	background-image: url("../ASSETS/HiRes/Boat.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.box2 {
+	animation: slideIn 1s forwards;
+	background-image: url("../ASSETS/products/red-FullLogo.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.vertbox {
+	display: block;
+	height: 85vh;
+	width: 60%;
+	margin: 5vh auto 0px 5%;
+	position: relative;
+	background-image: url("../ASSETS/HiRes/run.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	animation: slideUp 1s forwards;
+}
+
+.heroitem-left {
+	transition: width 0.2s ease-in-out;
+	cursor: pointer;
+
+	.item-overlay {
+		position: absolute;
+		background: rgba($color: $secondary-color, $alpha: 0.3);
+		bottom: 0;
+		top: 0;
+		left: 100%;
+		right: 0;
+		overflow: hidden;
+		width: 0;
+		height: 100%;
+		transition: 0.3s cubic-bezier(0.4, 0.8, 0.9, 1);
+	}
+}
+
+.heroitem-left:hover {
+	width: 70%;
+}
+
+.heroitem-right {
+	transition: width 0.2s ease-in-out;
+	cursor: pointer;
+
+	.item-overlay {
+		position: absolute;
+		background: rgba($color: $secondary-color, $alpha: 0.3);
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		overflow: hidden;
+		width: 0;
+		height: 100%;
+		transition: 0.3s cubic-bezier(0.4, 0.8, 0.9, 1);
+	}
+}
+
+.heroitem-right:hover {
+	width: 70%;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.heroitem-left:hover .item-overlay {
+	width: 100%;
+	left: 0;
+}
+
+.heroitem-right:hover .item-overlay {
+	width: 100%;
+	left: 0;
+}
+
+h3 {
+	color: white;
+	font-size: 32px;
+	position: absolute;
+	font-family: 'decoy';
+	font-size: 70px;
+	top: 50%;
+	left: 50%;
+	white-space: nowrap;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+@keyframes slideUp {
+	from {
+		top: 1000px;
+		opacity: 0;
+	}
+
+	to {
+		top: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		left: -1000px;
+		opacity: 0;
+	}
+
+	to {
+		left: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes IOanim {
+	from {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

@@ -1,0 +1,353 @@
+.nav-logowrap {
+	width: 15%;
+
+	.nav-logo {
+		position: fixed;
+		width: 100px;
+		height: 100px;
+		top: 25px;
+		left: 20px;
+		background: url("../ASSETS/icons/Logo-Anim.png") -0px 0px no-repeat;
+		transition: background-position 0.2s steps(4, end), opacity 0.2s, left 0.2s;
+		transform: scale(1.5);
+		filter: drop-shadow(2px 2px 0px $lighttext-color) drop-shadow(-2px 2px 0px $lighttext-color)
+			drop-shadow(2px -2px 0px $lighttext-color) drop-shadow(-2px -2px 0px $lighttext-color);
+		animation: logoreset .4s steps(4) alternate both;
+	}
+
+	.logo-link:hover .nav-logo {
+		animation: logoplay .25s steps(4) alternate both;
+	}
+}
+
+.page-header {
+	position: relative;
+	width: 100%;
+	display: block;
+	position: fixed;
+	height: 72px;
+	z-index: 20;
+	top: 0;
+	left: 0;
+	display: flex;
+	background: rgba(249, 246, 231, 0.95);
+	transition: width 0.5s ease-in-out;
+
+	.nav-content {
+		width: 450px;
+		display: flex;
+
+		a {
+			color: $text-color;
+			transition: color 0.2s ease-in;
+			position: relative;
+			font-size: 21PX;
+			font-family: "Poppins", sans-serif;
+			font-weight: 700;
+			float: left;
+			width: 150px;
+			text-align: center;
+			padding: 24px 10px 24px 10px;
+			transition: background-color 0.2s;
+		}
+
+		a:hover {
+			color: $secondary-color;
+			background-color: $grey-color;
+		}
+
+		a::before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 3px;
+			width: 0;
+			transition: 0.2s ease-out;
+		}
+
+		a::after {
+			content: "";
+			display: block;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			height: 3px;
+			width: 0;
+			background: $primary-color;
+			transition: width 0.3s ease-in;
+			transition-delay: 0.05s;
+		}
+
+		a:hover::before {
+			width: 100%;
+			background: $secondary-color;
+		}
+
+		a:hover::after {
+			width: 100%;
+			background: transparent;
+		}
+	}
+
+	.nav-widget {
+		position: fixed;
+		display: flex;
+		right: 0;
+		top: 0;
+
+		.user-widget {
+			border-left: 2px solid $grey-color;
+
+			a {
+				&:hover .user-wrapper {
+					background-color: $grey-color;
+				}
+
+				.user-wrapper {
+					width: 72px;
+					height: 72px;
+					padding: 11px;
+					transition: background-color 0.2s ease-in-out;
+
+					.user-img {
+						height: 50px;
+						width: 50px;
+						border-radius: 25px;
+						background: url("../ASSETS/icons/Artboard 1.png");
+						background-repeat: no-repeat;
+						background-position: center;
+						background-size: contain;
+					}
+				}
+			}
+		}
+
+		.cart-widget {
+			border-left: 2px solid $grey-color;
+
+			&:hover .dropdown-content {
+				height: 400px;
+			}
+
+			&:hover .cart-wrapper {
+				background-color: $background-color;
+			}
+			&:hover .cart-wrapper span {
+				animation: none;
+			}
+			.cart-wrapper {
+				width: 72px;
+				height: 72px;
+				padding: 15px;
+				transition: background-color 0.2s ease-in-out;
+
+				.cart-logo {
+					height: 100%;
+					width: 100%;
+					background: url("../ASSETS/icons/shopping_bag_black_24dp.svg");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: contain;
+				}
+
+				span {
+					position: absolute;
+					right: 15px;
+					top: 35px;
+					width: 20px;
+					text-align: center;
+					font-weight: 800;
+					background-color: $secondary-color;
+					color: white;
+					border-radius: 50%;
+					animation: cartBounce .4s ease-in-out infinite alternate;
+				}
+			}
+
+			.dropdown-content {
+				height: 0;
+				right: 0;
+				font-size: 16px;
+				position: absolute;
+				top: 72px;
+				background-color: white;
+				box-shadow: 0px 15px 10px 0px rgba(0, 0, 0, 0.2);
+				z-index: 1;
+				overflow: hidden;
+				transition: height 0.5s;
+
+				.cart-content {
+					overflow-y: scroll;
+					height: auto;
+
+					.cart-item {
+						color: black;
+						width: 500px;
+						height: 80px;
+						// margin-bottom: 10px;
+						text-decoration: none;
+						display: flex;
+						line-height: 80px;
+						border-bottom: 5px solid $background-color;
+
+						img.item-img {
+							width: 100px;
+							height: 100%;
+							font-size: 24px;
+						}
+
+						.item-name {
+							width: 210px;
+							height: 100%;
+							font-size: 24px;
+						}
+
+						.item-quant {
+							width: 60px;
+							font-size: 20px;
+							background-color: $background-color;
+							text-align: center;
+						}
+
+						.item-price {
+							width: 80px;
+							height: 100%;
+							font-size: 20px;
+						}
+
+						.item-remove {
+							height: 100%;
+							width: 50px;
+							text-align: center;
+							font-family: "decoy";
+							font-size: 20px;
+							color: $secondary-color;
+							transition: 0.3s ease-in-out;
+
+							&:hover {
+								color: white;
+								cursor: pointer;
+								background-color: $secondary-color;
+							}
+						}
+					}
+
+					&:hover .dropdown-content {
+						height: 400px;
+					}
+
+					&:hover .cart-wrapper {
+						background-color: $primary-accent;
+						width: 120px;
+					}
+				}
+				.cart-summary {
+					position: absolute;
+					width: 100%;
+					bottom: 40px;
+					display: flex;
+					font-size: 20px;
+					color: $text-color;
+					.cart-totallabel {
+						margin-left: 20px;
+					}
+
+					.cart-total {
+						margin-left: 60px;
+						font-size: 26px;
+					}
+				}
+			}
+
+			a {
+				color: white;
+
+				.cart-footer {
+					position: absolute;
+					background-color: $secondary-color;
+					height: 40px;
+					width: 100%;
+					padding: 10px;
+					bottom: 0;
+				}
+			}
+		}
+
+		@keyframes cartBounce {
+			from {
+				top: 30px;
+			}
+
+			to {
+				top: 35px;
+			}
+		}
+
+		@keyframes logoplay {
+			from {
+				background-position: 0px;
+			}
+
+			to {
+				background-position: -400px;
+			}
+		}
+
+		@keyframes logoreset {
+			from {
+				background-position: -400px;
+			}
+
+			to {
+				background-position: 0px;
+			}
+		}
+
+		@media screen and (max-width: 420px) {
+			.nav-content {
+				padding-right: 0;
+				width: 100%;
+
+				a {
+					color: $background-color;
+					width: 50%;
+					margin: auto;
+				}
+			}
+
+			header {
+				bottom: 0;
+				top: auto;
+				box-shadow: 0px 0 0px 0px $grey-color;
+				border-top: 3px solid $secondary-color;
+			}
+
+			.logo {
+				display: none;
+			}
+
+			.wrapper-leftcontent {
+				width: 0%;
+			}
+
+			.wrapper-rightcontent {
+				width: 100%;
+				background: $primary-color;
+			}
+		}
+
+		@keyframes logoSlideDown {
+			from {
+				transform: translateY(-100px);
+				opacity: 0;
+			}
+
+			to {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	}
+}

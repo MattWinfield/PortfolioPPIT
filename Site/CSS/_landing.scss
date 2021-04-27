@@ -1,0 +1,141 @@
+.landing-sec {
+	// TODO ADD THE GIF VERSION OF THE DECOY GUY TO THIS SECTION
+	width: 100%;
+	background: url(../ASSETS/HiRes/landing.png);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+
+	&.min {
+		height: 400px;
+		.landing-wrapper {
+			h1.landing-title {
+				opacity: 1;
+				text-align: center;
+				width: 100%;
+				animation: none;
+				margin-top: 0px;
+				transform: rotate(0deg);
+			}
+		}
+	}
+
+	.landing-wrapper {
+		width: 90%;
+		margin: auto;
+		padding: 180px 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		h2.landing-subtitle {
+			overflow: hidden;
+			position: relative;
+			width: 100px;
+			font-family: "Pixel";
+			font-size: 38px;
+			white-space: nowrap;
+			color: $lighttext-color;
+			animation: typewriter 1.5s steps(15) 1s 1 normal both, blinkingCursor 0.6s steps(2) infinite normal;
+		}
+
+		h1.landing-title {
+			font-size: 200px;
+			margin-top: 20px;
+			font-family: "Decoy";
+			transform: rotate(-10deg);
+			background: -webkit-linear-gradient($secondary-color, #6e0012);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			opacity: 0;
+			animation: LandingSlide 2s both;
+			animation-delay: 2.5s;
+		}
+
+		.scrollpill-container {
+			position: relative;
+			margin-top: 70px;
+			width: 35px;
+			height: 60px;
+			border-radius: 50px;
+			border: 3px solid $secondary-color;
+
+			span.scrollpill-img {
+				position: absolute;
+				width: 19px;
+				left: 5px;
+				height: 19px;
+				border-radius: 100%;
+				border: 3px solid $secondary-color;
+				transition: opacity 0.1s ease-in-out, 0.4s ease-in-out;
+				animation: scrollPrompt 2s infinite;
+			}
+		}
+	}
+}
+
+@keyframes scrollPrompt {
+	0% {
+		top: 0;
+		opacity: 0;
+	}
+
+	50% {
+		top: 17px;
+		opacity: 1;
+	}
+
+	100% {
+		top: 40px;
+		opacity: 0;
+	}
+}
+
+@keyframes typewriter {
+	from {
+		width: 0;
+	}
+
+	to {
+		width: 380px;
+	}
+}
+
+@keyframes blinkingCursor {
+	from {
+		border-right: 6px solid rgba(255, 255, 255, 1);
+	}
+
+	to {
+		border-right-width: 0px;
+	}
+}
+
+@keyframes arrowBounce {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(10px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes LandingSlide {
+	from {
+		transform: translateY(200px) rotate(-10deg);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0) rotate(-10deg);
+		opacity: 1;
+	}
+}

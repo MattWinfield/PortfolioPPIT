@@ -1,0 +1,209 @@
+.bio {
+	width: 100%;
+	max-height: 400px;
+	background: $primary-color;
+	display: flex;
+	// max-width: 1500px;
+	// margin: 0 auto;
+
+	.bioimage-container {
+		position: relative;
+		width: 40%;
+		overflow: hidden;
+
+		.bioimage-foreground {
+			position: absolute;
+			background-image: url(../ASSETS/HiRes/marine_effect.png);
+			background-size: 1000px;
+			background-repeat: no-repeat;
+			background-position: center;
+			width: 100%;
+			height: 100%;
+
+			&.store {
+				background-image: url(../ASSETS/HiRes/family.png);
+				background-size: 400px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+		}
+
+		.bioimage-background {
+			position: absolute;
+			top: 0px;
+			left: -50%;
+			background-color: $secondary-accent;
+			width: 90%;
+			height: 100%;
+		}
+	}
+
+	.bio-wrapper {
+		width: 60%;
+		padding-right: 40px;
+		display: flex;
+
+		span.bio-divide {
+			width: 2px;
+			height: 40vh;
+			margin: 10vh 0 10vh 0;
+			background-color: $primary-accent;
+		}
+
+		.bio-full {
+			width: 100%;
+			height: 300px;
+			padding: 60px 24px;
+			justify-items: center;
+
+			.bio-text {
+				width: auto;
+				color: $background-color;
+
+				h2 {
+					font-size: calc(12px + 1vw);
+				}
+
+				p {
+					font-weight: 200;
+					font-size: calc(4px + 1vw);
+					padding: 1rem;
+					line-height: 1.6em;
+				}
+
+				span {
+					font-family: "Decoy";
+				}
+
+				ul {
+					padding: 0 1rem;
+					line-height: 1.6em;
+				}
+
+				a {
+					color: $secondary-color;
+					font-weight: 700;
+					font-size: calc(4px + 1vw);
+					transition: margin-left 0.2s ease-out;
+
+					&:hover {
+						color: $secondary-accent;
+					}
+				}
+			}
+		}
+
+		.bio-col {
+			width: 50%;
+			padding: 60px 24px;
+			justify-items: center;
+
+			.bio-text {
+				width: auto;
+				color: $background-color;
+
+				h2 {
+					font-size: calc(12px + 1vw);
+				}
+
+				p {
+					font-weight: 200;
+					font-size: calc(4px + 1vw);
+					padding: 1rem;
+					line-height: 1.6em;
+				}
+
+				span {
+					font-family: "Decoy";
+				}
+
+				ul {
+					padding: 0 1rem;
+					line-height: 1.6em;
+				}
+
+				a {
+					color: $secondary-color;
+					font-weight: 700;
+					font-size: calc(4px + 1vw);
+					transition: margin-left 0.2s ease-out;
+
+					&:hover {
+						color: $secondary-accent;
+					}
+				}
+			}
+		}
+	}
+}
+
+.anim {
+	opacity: 0;
+}
+
+@keyframes IOanim {
+	from {
+		transform: translateX(100px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes bioSlide {
+	0% {
+		margin-left: 0px;
+	}
+
+	50% {
+		margin-left: 500px;
+	}
+
+	100% {
+		margin-left: 0px;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.bioimage-container {
+		border-radius: 35vw;
+		width: 70vw;
+		height: 70vw;
+		top: 0;
+		margin: 0 15vw;
+		overflow: hidden;
+		background-color: $secondary-color;
+	}
+
+	.bio {
+		width: 100%;
+		height: 540px;
+	}
+
+	.bio-col {
+		position: relative;
+		top: 10px;
+		left: 0;
+		width: 100%;
+		height: 50%;
+		padding: 0;
+	}
+
+	.bio-col:nth-child(even) {
+		left: 0;
+		top: 75px;
+	}
+
+	.bio-divide {
+		display: none;
+	}
+
+	.bio-text {
+		position: absolute;
+		margin-top: 0;
+		color: $background-color;
+	}
+}

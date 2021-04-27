@@ -1,0 +1,68 @@
+.store-row {
+	display: flex;
+	.store-item {
+		width: 33%;
+		margin: 50px 0;
+
+		.item-wrapper {
+			width: 400px;
+			height: 400px;
+
+			&:hover .item-image {
+				opacity: 1;
+			}
+
+			margin: 0 auto;
+			background-color: crimson;
+			.item-image {
+				height: 40%;
+				background-image: url("../ASSETS/products/red-FullLogo.jpg");
+				background-size: cover;
+				background-position: center;
+				opacity: 0.8;
+				overflow: hidden;
+				transition: opacity 0.2s ease-in-out;
+			}
+			.item-desc {
+				height: 40%;
+				background-color: $lighttext-color;
+				h2.item-head {
+					padding: 10px;
+					font-size: 24px;
+					font-family: 'Decoy';
+					border-bottom: 2px solid $primary-highlight;
+				}
+				p.item-text {
+					padding: 20px;
+				}
+			}
+			.item-foot {
+				height: 20%;
+				text-align: center;
+				display: flex;
+				.item-cost {
+					width: 60%;
+					height: 100%;
+					padding: 15px 0;
+					font-size: 48px;
+					font-family: 'Decoy';
+					background-color: #f0f0f0;
+					.item-priceaffix {
+						font-family: 'Decoy';
+						font-size: 24px;
+					}
+				}
+				button.item-add {
+					width: 40%;
+					height: 100%;
+					padding: 15px 0;
+					font-size: 48px;
+					background-color: $secondary-accent;
+					color: $lighttext-color;
+					cursor: pointer;
+					font-family: 'Decoy';
+				}
+			}
+		}
+	}
+}

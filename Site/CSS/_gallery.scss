@@ -1,0 +1,73 @@
+.project-bar {
+	display: flex;
+	background-color: $lighttext-color;
+	margin: 50px auto;
+	max-width: 1500px;
+	box-shadow: 0px 15px 10px 0px rgba(0, 0, 0, 0.2);
+
+	.project-aside {
+		height: 400px;
+		width: 30%;
+		padding: 20px;
+
+		.project-thumb {
+			width: 100%;
+			height: 100%;
+			background-image: url("../ASSETS/HiRes/Boat.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+		.ill {
+			background-image: url("../ASSETS/HiRes/LPTVFGy.png");
+		}
+		.game {
+			background-image: url("../ASSETS/HiRes/thumb.png");
+		}
+	}
+
+	.project-wrapper {
+		width: 70%;
+		display: flex;
+
+		.project-text {
+			padding: 0 0 0 20px;
+			width: 25%;
+			height: 100%;
+			h1 {
+				height: 50px;
+				color: black;
+				font-family: 'decoy';
+				font-size: 24px;
+				padding: 12px;
+			}
+			p {
+			}
+		}
+
+		.project-content {
+			display: flex;
+			width: 75%;
+
+			.project-gallery {
+				padding: 20px;
+
+				.gallery-row {
+					display: flex;
+					height: 50%;
+
+					img {
+						width: 50%;
+						height: 200px;
+						transition: transform 0.25s ease;
+
+						&:hover {
+							z-index: 10;
+							-webkit-transform: scale(1.5);
+							transform: scale(1.5);
+						}
+					}
+				}
+			}
+		}
+	}
+}
